@@ -4,7 +4,7 @@ class LevelRow extends Pix_Table_Row
 {
     public function getEAVs()
     {
-        return EAV::search(array('table' => 'Level', 'id' => $this->set_id));
+        return EAV::search(array('table' => 'Level', 'id' => $this->id));
     }
 
 }
@@ -24,6 +24,7 @@ class Level extends Pix_Table
         $this->_columns['url'] = array('type' => 'text');
 
         $this->addRowHelper('Pix_Table_Helper_EAV', array('getEAV', 'setEAV'));
+        $this->_hooks['eavs'] = array('get' => 'getEAVs');
     }
 
     public function getLevels()
