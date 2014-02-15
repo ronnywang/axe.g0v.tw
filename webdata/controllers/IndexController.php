@@ -8,7 +8,11 @@ class IndexController extends Pix_Controller
         return $this->redraw('/index/level.phtml');
     }
 
-    public function levelAction()
+    public function levelAction($id)
     {
+        $this->view->level = Level::find_by_level_no($id);
+        if (!$this->view->level) {
+            return $this->redirect('/');
+        }
     }
 }
