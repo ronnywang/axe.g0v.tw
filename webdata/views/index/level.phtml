@@ -1,0 +1,31 @@
+<?= $this->partial('common/header.phtml', $this) ?>
+<p><?= $this->escape($this->level->desc) ?></p>
+
+<h3>網頁內容</h3>
+<p>網址: <code><?= $this->escape($this->level->url) ?></code></p>
+<iframe src="<?= $this->escape($this->level->url) ?>" style="width: 100%; height: 300px"></iframe>
+
+<h3>答案格式</h3>
+<code><?= $this->escape($this->level->getEAV('answer')) ?></code>
+
+<h3>回傳答案</h3>
+<form method="post">
+    您的名稱: <input type="text"><br>
+    <textarea style="width: 100%" placeholder="答案貼這邊"></textarea>
+    <button type="submit">送出答案</button>
+</form>
+
+
+<h3>討論</h3>
+<p>您可以將您算出答案的程式上傳至 github ，並且在這邊與大家分享，但請不要將答案貼在這邊</p>
+<div id="fb-root"></div>
+<script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=<?= getenv(FB_APPID) ?>";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<?= $this->partial('common/footer.phtml', $this) ?>
