@@ -9,5 +9,8 @@ Pix_Controller::addDispatcher(function($url){
     if ($terms[1] == 'level') {
         return array('index', 'level', $terms[2]);
     }
+    if ($terms[1] == 'check') {
+        return array('index', 'check', $terms[2]);
+    }
 });
 Pix_Controller::dispatch(__DIR__ . '/webdata/');
