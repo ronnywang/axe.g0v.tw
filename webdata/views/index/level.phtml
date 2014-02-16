@@ -15,6 +15,10 @@
     <button type="submit">送出答案</button>
 </form>
 
+<h3>成功名單</h3>
+<?php foreach(LevelHero::search(array('level_id' => $this->level->id))->order('created_at DESC')->limit(100) as $hero) { ?>
+<span title="<?= date('Y/m/d H:i:s', $hero->created_at) ?>"><?= $this->escape($hero->name) ?></span>
+<?php } ?>
 
 <h3>討論</h3>
 <p>您可以將您算出答案的程式上傳至 github ，並且在這邊與大家分享，但請不要將答案貼在這邊</p>
