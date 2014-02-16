@@ -7,6 +7,12 @@ class LevelRow extends Pix_Table_Row
         return EAV::search(array('table' => 'Level', 'id' => $this->id));
     }
 
+    public function check($guess)
+    {
+        $answer = json_decode($this->getEAV('answer'));
+        $result = AnswerLib::verifyAnswer($answer, $guess);
+        return $result;
+    }
 }
 
 class Level extends Pix_Table
