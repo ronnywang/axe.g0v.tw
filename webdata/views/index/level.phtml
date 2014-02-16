@@ -9,7 +9,7 @@
 <code><?= $this->escape($this->level->getEAV('format')) ?></code>
 
 <h3>回傳答案</h3>
-<form method="post" action="/check/<?= $this->level->level_no ?>">
+<form method="post" action="/index/check/<?= $this->level->level_no ?>">
     您的名稱: <input type="text" name="name"><br>
     <textarea style="width: 100%" placeholder="答案貼這邊" name="answer"></textarea>
     <button type="submit">送出答案</button>
