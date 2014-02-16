@@ -6,7 +6,7 @@
 <iframe src="<?= $this->escape($this->level->url) ?>" style="width: 100%; height: 300px"></iframe>
 
 <h3>答案格式</h3>
-<code><?= $this->escape($this->level->getEAV('answer')) ?></code>
+<code><?= $this->escape($this->level->getEAV('format')) ?></code>
 
 <h3>回傳答案</h3>
 <form method="post" action="/check/<?= $this->level->level_no ?>">
