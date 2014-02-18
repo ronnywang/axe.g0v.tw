@@ -38,7 +38,7 @@ _gaq.push(['_trackPageview']);
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <?php foreach(Level::getLevels() as $level) { ?>
-                <li<?= $this->level == $level->level_no ? ' class="active"' : '' ?>><a href="/level/<?= $level->level_no ?>"><?= $level->level_no ?></a></li>
+                <li<?= $this->level->level_no == $level->level_no ? ' class="active"' : '' ?>><a href="/level/<?= $level->level_no ?>"><?= $level->level_no ?></a></li>
                 <?php } ?>
             </ul>
         </div>
