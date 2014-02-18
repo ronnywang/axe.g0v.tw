@@ -1,4 +1,5 @@
 <?= $this->partial('common/header.phtml', $this) ?>
+<h2>第 <?= $this->level->level_no ?> 關: <?= $this->escape($this->level->title) ?></h2>
 <p><?= $this->escape($this->level->desc) ?></p>
 
 <h3>網頁內容</h3>
